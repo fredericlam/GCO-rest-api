@@ -1,0 +1,41 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+RewriteEngine On
+
+# get all the cancers or per id
+RewriteRule ^cancers/all/$ index.php?mode=cancer_site
+RewriteRule ^cancers/(.*)/$ index.php?mode=cancer_site&population=$1
+
+# get all the registries or per id
+RewriteRule ^registries/all/$ index.php?mode=registry
+RewriteRule ^registries-continents/(.*)/$ index.php?mode=registry_continent&continent=$1
+RewriteRule ^registries/(.*)/$ index.php?mode=registry&registry=$1
+
+# get all the registries ethnic group
+RewriteRule ^registry_ethnic/(.*)/$ index.php?mode=registry_ethnic&registry=$1
+
+# get all the volumes or per id
+RewriteRule ^volumes/all/$ index.php?mode=volume
+RewriteRule ^volumes-registries/(.*)/$ index.php?mode=volume_registry&registry=$1
+RewriteRule ^volumes/(.*)/$ index.php?mode=volume&volume=$1
+
+# get population by registry / year / sex
+RewriteRule ^population/(.*)/(.*)/(.*)/$ index.php?mode=population&registry=$1&year=$2&sex=$3
+
+# get cases by registry / year / sex
+# RewriteRule ^cases/(.*)/(.*)/(.*)/$ index.php?mode=cases&registry=$1&year=$2&sex=$3
+
+# get cases by volume / cancer / sex / continent
+RewriteRule ^cases/(.*)/(.*)/(.*)/(.*)/$ index.php?mode=cases&volume=$1&cancer=$2&sex=$3&continent=$4
+
+# get cases by registry / year / sex
+RewriteRule ^cases-continents/(.*)/(.*)/(.*)/$ index.php?mode=cases&by_continent=1&continent=$1&cancer=$2&sex=$3
+# get cases by registry / volume / sex
+RewriteRule ^cases-cancer/(.*)/(.*)/(.*)/$ index.php?mode=cases&by_cancer=1&registry=$1&volume=$2&sex=$3
+# get cases by registry / year / sex
+RewriteRule ^cases-registry/(.*)/(.*)/(.*)/$ index.php?mode=cases&by_registry=1&registry=$1&cancer=$2&sex=$3
+# get cases by registry / year / sex
+RewriteRule ^cases-volumes/(.*)/(.*)/(.*)/$ index.php?mode=cases&by_volume=1&registry=$1&cancer=$2&sex=$3
+

@@ -1,0 +1,23 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+RewriteEngine On
+
+# get all the cancers or per id
+RewriteRule ^cancers/all/$ index.php?mode=cancer
+
+# get all populations
+RewriteRule ^populations/all/$ index.php?mode=population
+
+# the new predictions
+RewriteRule ^(.*)/numbers/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?v=$1&mode=predictions&type=$2&sex=$3&population=$4&cancer=$5&predictions_year=$6&apc=$7 [QSA,L]
+
+
+# @out to date
+# get cases
+RewriteRule ^cases/(.*)/(.*)/$ index.php?mode=predictions_cases&population=$1&cancers=$2&type=0
+RewriteRule ^deaths/(.*)/(.*)/$ index.php?mode=predictions_deaths&population=$1&cancers=$2&type=1
+
+RewriteRule ^cases_all/(.*)/(.*)/(.*)/$ index.php?mode=predictions_cases_all&population=$1&cancers=$2&type=0&sex=$3
+RewriteRule ^deaths_all/(.*)/(.*)/(.*)/$ index.php?mode=predictions_deaths_all&population=$1&cancers=$2&type=1&sex=$3

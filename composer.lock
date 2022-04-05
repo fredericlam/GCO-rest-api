@@ -1,0 +1,61 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "e00544d80826d18ea788e5b4e1a6002f",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "letsdrink/ouzo-goodies",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/letsdrink/ouzo-goodies.git",
+                "reference": "64df36acec1371cd055e9360f11fb78a563f7129"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/letsdrink/ouzo-goodies/zipball/64df36acec1371cd055e9360f11fb78a563f7129",
+                "reference": "64df36acec1371cd055e9360f11fb78a563f7129",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ouzo\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ouzo developers",
+                    "email": "ouzo-framework@googlegroups.com"
+                }
+            ],
+            "description": "Utility classes, test assertions and mocking framework extracted from Ouzo framework.",
+            "homepage": "http://ouzoframework.org/",
+            "keywords": [
+                "TDD",
+                "asserts",
+                "mock",
+                "php",
+                "test",
+                "utilities",
+                "utils"
+            ],
+            "time": "2016-05-23T07:22:48+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

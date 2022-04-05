@@ -1,0 +1,28 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+RewriteEngine On
+
+# get all the cancers or per id
+RewriteRule ^cancers/all/$ index.php?mode=cancer_site
+RewriteRule ^cancers/(.*)/$ index.php?mode=cancer_site&population=$1
+
+# get all the registries or per id
+RewriteRule ^registries/all/$ index.php?mode=registry
+RewriteRule ^registries-continents/(.*)/$ index.php?mode=registry_continent&continent=$1
+RewriteRule ^registries/(.*)/$ index.php?mode=registry&registry=$1
+
+# get all the registries ethnic group
+RewriteRule ^registry_ethnic/(.*)/$ index.php?mode=registry_ethnic&registry=$1
+
+# get years
+RewriteRule ^years/all/$ index.php?mode=years
+
+# get cases by registry / year / sex - line/areas
+RewriteRule ^cases/(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?mode=cases&registry=$1&ethnic_group=$2&year=$3&sex=$4&cancer=$5
+RewriteRule ^cases-areas/(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?mode=cases-areas&registry=$1&ethnic_group=$2&year=$3&sex=$4&cancer=$5
+
+RewriteRule ^top-cases/(.*)/(.*)/(.*)/$ index.php?mode=top_cases&registry=$1&year=$2&sex=$3
+
+RewriteRule ^populations/(.*)/$ index.php?mode=populations&registry=$1

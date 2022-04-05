@@ -1,0 +1,15 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+RewriteEngine On
+
+# get all the cancers or per id
+RewriteRule ^(.*)/(.*)/$ index.php?mode=cancer
+
+# get all populations
+RewriteRule ^populations/all/$ index.php?mode=population
+
+# get cases
+RewriteRule ^cases/(.*)/(.*)/$ index.php?mode=predictions_cases&population=$1&cancers=$2&type=0
+RewriteRule ^deaths/(.*)/(.*)/$ index.php?mode=predictions_deaths&population=$1&cancers=$2&type=1

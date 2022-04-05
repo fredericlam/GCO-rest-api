@@ -1,0 +1,38 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+RewriteEngine On
+
+# sandbox
+RewriteRule ^(.*)/(.*)/sandbox/$ index.php?mode=sandbox [QSA,L]
+
+# get data sources & methods 
+RewriteRule ^/[1-9]/data-sources/$ index.php?mode=data_sources [QSA,L]
+RewriteRule ^/[1-9]/data-methods/$ index.php?mode=data_methods [QSA,L]
+
+# get all the countries or per id
+# RewriteRule ^(.*)/(.*)/populations/all/$ index.php?mode=populations&v=$1&y=$2 [QSA,L]
+RewriteRule ^(.*)/(.*)/meta/populations/all/$ index.php?mode=populations&v=$1&y=$2 [QSA,L]
+RewriteRule ^(.*)/(.*)/meta/populations/(.*)/$ index.php?mode=populations&v=$1&y=$2&population=$3 [QSA,L]
+
+# get all the cancers or per id
+# RewriteRule ^(.*)/(.*)/cancers/all/$ index.php?mode=cancer_site&v=$1&y=$2 [QSA,L]
+RewriteRule ^(.*)/(.*)/meta/cancers/all/$ index.php?mode=cancer_site&v=$1&y=$2 [QSA,L]
+RewriteRule ^(.*)/(.*)/meta/cancers/(.*)/$ index.php?mode=cancer_site&v=$1&y=$2&cancer=$3 [QSA,L]
+
+# get full numbers 
+RewriteRule ^(.*)/(.*)/full/$ index.php?mode=full_numbers&v=$1&y=$2 [QSA,L]
+
+# get numbers type (0 or 0_1 or 0_1_2) // sex
+RewriteRule ^(.*)/(.*)/data/(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?v=$1&y=$2&mode=numbers&sub_mode=$3&type=$4&sex=$5&population=$6&cancer=$7 [QSA,L]
+RewriteRule ^(.*)/(.*)/data/(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?v=$1&y=$2&mode=data&sub_mode=$3&type=$4&sex=$5&population=$6&cancer=$7 [QSA,L]
+
+# get numbers by hubs, continents, who, areas (regions) or hdi
+RewriteRule ^(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/$ index.php?v=$1&y=$2&mode=$3&sub_mode=$4&type=$5&sex=$6&population=$7&cancer=$8&mode_population=$3 [QSA,L]
+
+# get predictions
+RewriteRule ^(.*)/(.*)/predictions/(.*)/(.*)/$ index.php?mode=predictions&v=$1&y=$2&population=$3&sex=$4 [QSA,L]
+
+# get top cancers per countries 
+RewriteRule ^(.*)/(.*)/top_cancers/(.*)/(.*)/(.*)/$ index.php?mode=top_cancers&v=$1&y=$2&type=$3&sex=$4&population=$5 [QSA,L]

@@ -1,0 +1,17 @@
+# List of calls to read REST API
+
+
+# get all data, in a row (incidence, female, list of pop, list of cancers)
+http://www.gco.local/api/globocan/2012/numbers/full/0/2/981_982_983_984/22_8_21/
+
+# get all in a row inc/mort , male , one region, all cancers
+http://www.gco.local/api/globocan/2012/numbers/full/0_1/1/902/all/
+
+# get sum of incidence, grouped by cancer
+http://www.gco.local/api/globocan/2012/numbers/cancer/0/1/901_902/all/
+
+# get prevalence for 3 year (statistic = 1) grouped by population
+http://www.gco.local/api/globocan/2012/numbers/population/2/2/981_982_983_984/22_8_21/?statistic=1
+
+# get prevalence for 5 year (statistic = 1) grouped by cancer
+http://www.gco.local/api/globocan/2012/numbers/cancer/2/0/981_982_983_984/all/?statistic=2

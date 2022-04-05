@@ -1,0 +1,17 @@
+{
+    "name": "gco/api",
+    "description": "Global Cancer Observatory REST API",
+    "type": "project",
+    "require-dev": {
+        "letsdrink/ouzo-goodies": "^1.6"
+    },
+    "license": "open-source",
+    "authors": [
+        {
+            "name": "LAM Frédéric",
+            "email": "lamf@iarc.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

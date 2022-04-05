@@ -10,7 +10,7 @@
 		default : 
 			$G_DB = [ 
 				'host' => 'ls-e6eb61010c430fb96846bacebaac754301cb5738.c0pxofply1yr.eu-west-3.rds.amazonaws.com' , 
-				'dbname' 	=> 'dbmaster' , 
+				'dbname' 	=> 'gco' , 
 				'user' 		=> 'dbmasteruser' , 
 				'password' 	=> '[_(ze&v&cZd^4YM$&&F$r~Pu3oy84+]u' , 
 				'host_api' 	=> 'http://13.38.107.82/api/' , 
